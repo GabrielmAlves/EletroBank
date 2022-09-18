@@ -1,0 +1,114 @@
+@font-face{
+	font-family: 'Glorine';
+	src: url(Fontes/Glorine.ttf);
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	background-color:#12FA71;
+	box-sizing: border-box;
+}
+
+h1{
+	text-align: center;
+	font-family: 'Glorine', sans-serif;
+	color: #fff;
+	font-size: 65px;
+	margin-top: 40px;
+}
+
+input{
+	border-radius: 20px;
+	padding: 10px;
+}
+
+/*==========SESSÃO DE CLASSES========*/
+
+.secao-botoes{
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.botoes{
+	background-color: #F8F9FF;
+	padding: 15px;
+	margin: 6px;
+	margin-top: 4px;
+	border-color: white;
+	border-radius: 30px;
+	font-family: 'Noordwijk', sans-serif;
+	font-size: 20px;
+	
+}
+
+.botoes:hover{
+	cursor: pointer;
+}
+
+.footer{
+	font-family: 'Noordwijk', sans-serif;
+	text-align: center;
+	align-items: center;
+	font-size: 30px;
+	color: #fff;
+	margin-top: 130px;
+}
+
+.popup{
+	width: 400px;
+	background: #fff;
+	border-radius: 6px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0.1);
+	text-align: center;
+	padding: 0 30px 30px;
+	color: #333;
+	visibility: hidden;
+	transition: transform 0.4s, top 0.4s;
+}
+
+.popup h2{
+	font-size: 20px;
+	font-weight: 500;
+	margin: 30px 0 10px;
+}
+
+.popup button{
+	width: 100%;
+	margin-top: 50px;
+	padding: 10px;
+	background: #6fd649;
+	border: 0;
+	outline: none;
+	font-size: 18px;
+	border-radius: 4px;
+	cursor: pointer;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.open-popup{
+	visibility: visible;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(1);
+}
+/*==============SESSÃO DE IDS===============*/
+
+
+
+/*=============SESSÃO DE TAMANHOS========*/
+
+@media (max-width: 1000px){
+	section{
+		padding: 100px 50px;
+	}
+}
+
+@media (max-width: 600px){
+	section{
+		margin-top: -80px;
+	}
+}

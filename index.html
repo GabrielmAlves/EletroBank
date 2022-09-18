@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Banco</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>EletroBank</h1>
+		<div class="secao-botoes">
+			<button class="botoes" onclick="popUpAbrir(1)">Criar conta</button>
+			<div class="popup" id="popup">
+				<h2>Nome:</h2>
+				<input id="nome_conta" type="text" placeholder="Digite seu nome">
+				<h2>Tipo da conta (P/B/E):</h2>
+				<input id="tipo_conta" type="text" placeholder="Digite o tipo de sua conta">
+				<button type="button" onclick="popUpFechar(1)">Criar conta</button>
+				<button type="button" onclick="popUpVoltar(1)">Voltar</button>
+			</div>
+			<button class="botoes">Listar contas</button>
+			<button class="botoes" onclick="popUpAbrir(2)">Sacar</button>
+			<div class="popup" id="popup1">
+				<h2>Valor desejado para saque: </h2>
+				<input id="valor_saque" type="number" placeholder="quantidade desejada para saque">
+				<h2>Número da conta que irá sacar: </h2>
+				<input id="conta_saque" type="number" placeholder="número da conta">
+				<h2>Tipo da conta (P/B/E): </h2>
+				<input id="tipo_saque" type="text" placeholder="tipo da conta">
+				<button type="button" onclick="popUpFechar(2)">Sacar</button>
+				<button type="button" onclick="popUpVoltar(2)">Voltar</button>
+			</div>
+			<button class="botoes" onclick="popUpAbrir(3)">Depositar</button>
+			<div class="popup" id="popup2">
+				<h2>Valor desejado para depósito: </h2>
+				<input id="valor_deposito" type="number" placeholder="quantidade desejada para depósito">
+				<h2>Número da conta que irá depositar: </h2>
+				<input id="conta_deposito" type="number" placeholder="número da conta">
+				<h2>Tipo da conta (P/B/E): </h2>
+				<input id="tipo_deposito" type="text" placeholder="tipo da conta">
+				<button type="button" onclick="popUpFechar(3)">Depositar</button>
+				<button type="button" onclick="popUpVoltar(3)">Voltar</button>
+			</div>
+			<button class="botoes" onclick="popUpAbrir(5)">Extrato</button>
+			<div class="popup" id="popup4">
+				<h2>Número da conta que deseja ver o extrato: </h2>
+				<input id="conta_transf" type="number" placeholder="número da conta">
+				<h2>Tipo da conta (P/B/E): </h2>
+				<input id="tipo_transf" type="text" placeholder="tipo da conta">
+				<button type="button" onclick="popUpFechar(5)">Ver extrato</button>
+				<button type="button" onclick="popUpVoltar(5)">Voltar</button>
+			</div>
+			<button class="botoes" onclick="popUpAbrir(4)">Transferir</button>
+			<div class="popup" id="popup3">
+				<h2>Valor desejado para transferência: </h2>
+				<input id="valor_transf" type="number" placeholder="quantidade desejada para transferência">
+				<h2>Número da conta que irá transferir: </h2>
+				<input id="conta_transf" type="number" placeholder="número da conta">
+				<h2>Tipo da conta (P/B/E): </h2>
+				<input id="tipo_transf" type="text" placeholder="tipo da conta">
+				<button type="button" onclick="popUpFechar(4)">Transferir</button>
+				<button type="button" onclick="popUpVoltar(4)">Voltar</button>
+			</div>
+		</div>
+	</div>
+	<script src="conta.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
