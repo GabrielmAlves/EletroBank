@@ -11,6 +11,7 @@ let tipo = document.getElementById('tipo_conta');
 let tipo_conta = tipo.value;
 let count = 0;
 let saldo = 0;
+let qtd = 0;
 /*Variáveis para saque*/
 let valor = document.getElementById('valor_saque');
 let valorSaque = valor.value;
@@ -28,13 +29,18 @@ let tipoDeposito = tipoD.value;
 /*Variáveis para transferência*/
 let valorT = document.getElementById('valor_transf');
 let valorTransferencia = valorT.value;
-let contaT = document.getElementById('conta_transf');
-let contaTransferencia = contaT.value;
-let tipoT = document.getElementById('tipo_transf');
-let tipoTransferencia = tipoT.value; 
+let contaTM = document.getElementById('conta_transf_manda');
+let contaTransferenciaM = contaTM.value;
+let tipoTM = document.getElementById('tipo_transf_manda');
+let tipoTransferenciaM = tipoTM.value;
+let contaTR = document.getElementById('conta_transf_recebe');
+let contaTransferenciaR = contaTR.value;
+let tipoTR = document.getElementById('tipo_transf_recebe');
+let tipoTransferenciaR = tipoTR.value;
+
 
 /*Objetos*/
-let c = new Conta(count,tipo_conta,nome_usuario,saldo);
+let c = new Conta(count,tipo_conta,nome_usuario,saldo,qtd);
 
 function popUpAbrir(valor1){
 	if(valor1 == 1){
@@ -65,7 +71,13 @@ function popUpFechar(valor2){
 		c.setTipoConta(tipo.value);
 		c.setNomeUsuario(nome.value);
 		c.setSaldo(saldo);
-		c.criarConta(c);
+		if(tipo.value == 'E'){
+			c.setQtdTransferenciasGratis(1);
+			c.criarConta(c);
+		}else if(tipo.value == 'B'){
+			c.setQtdTransferenciasGratis(3);
+			c.criarConta(c);
+		}
 	}
 	}else if(valor2 == 2){
 		if(valor.value == '' || conta.value == '' || tipoS.value == ''){
@@ -79,10 +91,29 @@ function popUpFechar(valor2){
 		c.sacar(valor.value,conta.value,tipoS.value);
 	}
 	}else if(valor2 == 3){
+		if(valorD.value == '' || contaD.value == '' || tipoD.value == ''){
+			alert('Preencha todos os campos!');
+		}else if(!isNaN(tipoD.value)){
+			alert('Tipo inválido!');
+		}else if(tipoD.value != 'P' && tipoD.value != 'B' && tipoD.value != 'E'){
+			alert('Tipo inválido!');
+		}else{
 		popup2.classList.remove("open-popup");
 		c.depositar(valorD.value,contaD.value,tipoD.value);
+	}
 	}else if(valor2 == 4){
+		if(valorT.value == '' || contaTM.value == '' || tipoTM.value == '' || contaTR.value == '' || tipoTR.value == ''){
+			alert('Preencha todos os campos!');
+		}else if(!isNaN(tipoTM.value) || !isNaN(tipoTR.value)){
+			alert('Tipo inválido!');
+		}else if(tipoTM.value != 'P' && tipoTM.value != 'B' && tipoTM.value != 'E'){
+			alert('Tipo inválido!');
+		}else if(tipoTR.value != 'P' && tipoTR.value != 'B' && tipoTR.value != 'E'){
+			alert('Tipo inválido!');
+		}else{
 		popup3.classList.remove("open-popup");
+		c.transferir(contaTM.value,contaTR.value,valorT.value,tipoTM.value,tipoTR.value);
+	}
 	}else if(valor2 == 5){
 		popup4.classList.remove("open-popup");
 	}
