@@ -89,13 +89,6 @@ class Conta{
 	transferir(conta1,conta2,valor,tipo1,tipo2){
 		let flag = 0;
 		for(var i = 0;i<this.Contas.length; i++){
-			console.log('fodase: ', conta1);
-			console.log('fodase: ', conta2);
-			console.log('fodase: ', valor);
-			console.log('fodase: ', tipo1);
-			console.log('fodase: ', tipo2);
-			console.log('fodase2222: ', this.Contas[i].numeroConta)
-			console.log('fodase2222: ', this.Contas[i].tipoConta)
 			if(this.Contas[i].tipoConta == tipo1 && this.Contas[i].numeroConta == conta1){
 				if(tipo1 == 'E'){
 				if(this.Contas[i].qtdTransferenciasGratis == 0){
